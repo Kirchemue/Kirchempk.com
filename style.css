@@ -56,37 +56,26 @@ body {
   background-color: #555;
 }
 
+/* Apply the nth-child selector */
+.image-list div:nth-child(even) img {
+  border-radius: 0;
+}
+
+/* Apply the grid property to the parent element */
+.image-list {
+  display: grid;
+  grid-template-columns: 1fr; /* Each image takes up the full width */
+  gap: 16px;
+}
+
 /* Apply styling for images using the box model */
 .image-list img {
   border: 2px solid #007bff;
   border-radius: 8px;
   padding: 8px;
   transition: transform 0.3s ease;
-  max-width: 20%; /* Set maximum width to 20% of the screen */
+  max-width: 30%; /* Set maximum width to 30% of the container */
   height: auto; /* Maintain aspect ratio */
-}
-
-.image-list img:hover {
-  transform: scale(1.1);
-}
-
-/* Apply the grid property to the parent element */
-.image-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
-  gap: 16px;
-}
-
-/* Apply the flex property to the parent element (card) */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Apply the nth-child selector */
-.image-list div:nth-child(even) img {
-  border-radius: 0;
 }
 
 /* Additional styling for the ordered list */
