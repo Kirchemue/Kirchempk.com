@@ -19,6 +19,17 @@ body {
   transition: opacity 0.3s ease;
 }
 
+/* Set initial visibility to hidden */
+.skip-link:not(:focus) {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 .skip-link:focus {
   opacity: 1;
 }
@@ -30,6 +41,7 @@ body {
   align-items: center;
   background-color: #343a40;
   padding: 10px;
+  border-bottom: 2px solid #555; /* Added border for separation */
 }
 
 .main-navigation a {
@@ -50,7 +62,7 @@ body {
   border-radius: 8px;
   padding: 8px;
   transition: transform 0.3s ease;
-  width: 100%; /* Ensure images take full width of their container */
+  max-width: 50%; /* Set maximum width to 50% of the screen */
   height: auto; /* Maintain aspect ratio */
 }
 
@@ -61,7 +73,7 @@ body {
 /* Apply the grid property to the parent element */
 .image-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
   gap: 16px;
 }
 
@@ -73,7 +85,7 @@ body {
 }
 
 /* Apply the nth-child selector */
-.image-list li:nth-child(even) img {
+.image-list div:nth-child(even) img {
   border-radius: 0;
 }
 
